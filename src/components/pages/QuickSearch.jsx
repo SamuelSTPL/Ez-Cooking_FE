@@ -27,13 +27,16 @@ export const QuickSearch = () => {
     dispatch(requestRecipesData());
 
     try {
-      const res = await fetch(`/quicksearch`, {
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(combinedFilters),
-        method: "POST",
-      });
+      const res = await fetch(
+        `https://serene-refuge-17806.herokuapp.com/quicksearch`,
+        {
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(combinedFilters),
+          method: "POST",
+        }
+      );
 
       const json = await res.json();
       dispatch(receivedRecipesData({ recipes: json.data, type: "filtered" }));

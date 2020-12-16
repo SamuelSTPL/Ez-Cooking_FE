@@ -22,7 +22,9 @@ export const Vegan = () => {
   const fetchRecipesFromDiet = async () => {
     dispatch(requestRecipesData());
     try {
-      const res = await fetch(`/diet/vegan`);
+      const res = await fetch(
+        `https://serene-refuge-17806.herokuapp.com/diet/vegan`
+      );
       const json = await res.json();
       console.log(json);
       dispatch(receivedRecipesData({ recipes: json.data, type: "vegan" }));

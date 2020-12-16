@@ -34,11 +34,14 @@ export const MyRecipes = () => {
     //Fetch all recipes from the array
     try {
       if (favoritesRecipeId.length > 0) {
-        const res = await fetch(`/recipes/${favoritesRecipeId}`, {
-          headers: {
-            "Content-type": "application/json",
-          },
-        });
+        const res = await fetch(
+          `https://serene-refuge-17806.herokuapp.com/recipes/${favoritesRecipeId}`,
+          {
+            headers: {
+              "Content-type": "application/json",
+            },
+          }
+        );
         const json = await res.json();
         setFavoritesRecipe(json.data);
       }

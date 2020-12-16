@@ -18,7 +18,9 @@ export const RecipeDetails = () => {
   console.log(recipeData);
   const fetchSingleRecipe = async () => {
     try {
-      const res = await fetch(`/recipe/${id}`);
+      const res = await fetch(
+        `https://serene-refuge-17806.herokuapp.com/recipe/${id}`
+      );
       const json = await res.json();
       setRecipeData(json.data);
     } catch (error) {
