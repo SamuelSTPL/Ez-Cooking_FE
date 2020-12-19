@@ -36,11 +36,6 @@ export const Header = () => {
               My Recipes
             </StyledNavLink>
           </Li>
-          <Li>
-            <StyledNavLink exact to="/login" onClick={() => setOpenMenu(false)}>
-              Log In
-            </StyledNavLink>
-          </Li>
         </Ul>
       </NavBar>
       <BurgerMenu />
@@ -101,14 +96,15 @@ const NavBar = styled.nav`
     right: 0px;
     width: 80%;
     margin-top: 15px;
-    margin-left: -70px;
+    margin-left: -60px;
   }
 `;
 
 const Ul = styled.ul`
   display: flex;
   @media (max-width: 500px) {
-    justify-content: space-around;
+    /* margin-left: 40px; */
+    /* justify-content: space-around; */
   }
 `;
 
@@ -133,7 +129,8 @@ const StyledNavLink = styled(NavLink)`
   padding: 5px;
 
   @media (max-width: 500px) {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+    margin-left: 3rem;
   }
 
   &.active {
