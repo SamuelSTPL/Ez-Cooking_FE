@@ -187,7 +187,7 @@ const RecipesColumns = styled.div`
 const LoadingWrapper = styled.div`
   position: absolute;
   left: 55%;
-  top: 50%;
+  top: 65%;
   transform: translate(-50%, -50%);
   @media (max-width: 500px) {
     left: 50%;

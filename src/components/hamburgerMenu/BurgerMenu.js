@@ -19,7 +19,7 @@ const HamburgerButton = styled.button`
   background: transparent;
   position: absolute;
   visibility: hidden;
-  font-size: 2rem;
+  font-size: 2.3rem;
   color: ${ColorSet.primary};
   border: none;
   transition: all 0.2s ease-in-out;
@@ -35,7 +35,7 @@ const HamburgerButton = styled.button`
 
   @media (max-width: 500px) {
     visibility: visible;
-    right: 30px;
+    right: 3rem;
     top: 85px;
   }
 `;
