@@ -47,7 +47,7 @@ export const MainCourse = () => {
   return (
     <Wrapper>
       <RecipesColumns>
-        {filteredRecipes ? (
+        {filteredRecipes.length > 0 ? (
           filteredRecipes.map((recipe) => {
             return (
               <RecipesContainer key={recipe.id}>

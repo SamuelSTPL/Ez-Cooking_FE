@@ -66,7 +66,7 @@ export const QuickSearch = () => {
         </ButtonsContainer>
       </SearchContainer>
       <RecipesColumns>
-        {filteredRecipes ? (
+        {filteredRecipes.length > 0 ? (
           filteredRecipes.map((recipe) => {
             return (
               <RecipesContainer key={recipe.id}>
