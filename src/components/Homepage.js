@@ -41,8 +41,9 @@ export const Homepage = () => {
 
 const Wrapper = styled.div`
   display: flex;
-  height: 100%;
+  min-height: 90vh;
   @media (max-width: 500px) {
+    /* min-height: 50vh; */
   }
 `;
 const SidebarWrapper = styled.div`

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { FiltersContext } from "../Context/FiltersContext";
 
 import { ColorSet } from "../../global/ColorSet";
+import { Swing } from "../../global/GlobalStyle";
 
 export const IngredientsFilter = () => {
   const [input, setInput] = useState("");
@@ -60,10 +61,10 @@ const Label = styled.label`
 `;
 
 const InputContainer = styled.div`
+  display: flex;
+  justify-content: center;
   @media (max-width: 500px) {
     margin-top: 20px;
-    display: flex;
-    justify-content: center;
   }
 `;
 
@@ -72,7 +73,7 @@ const Input = styled.input`
   padding-left: 10px;
   border-radius: 10px;
   height: 30px;
-  border: none;
+  border: 3px solid ${ColorSet.primary};
   width: 270px;
   margin-left: 20px;
   &:focus {
@@ -83,6 +84,7 @@ const Input = styled.input`
     width: 230px;
   }
 `;
+
 const Submit = styled.button`
   box-shadow: 0px 10px 13px -7px gray;
   border: 3px solid ${ColorSet.primary};
@@ -93,8 +95,12 @@ const Submit = styled.button`
   color: ${ColorSet.primary};
   background-color: white;
   margin-left: 15px;
+  height: 35px;
+  &:hover {
+    cursor: pointer;
+    animation: ${Swing} 1s ease;
+  }
   @media (max-width: 500px) {
-    height: 30px;
     font-size: 1.1rem;
   }
 `;

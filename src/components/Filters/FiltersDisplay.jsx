@@ -39,6 +39,8 @@ const FiltersContainer = styled.div`
   margin: 30px auto;
   text-align: center;
   background-color: white;
+  border: 3px solid ${ColorSet.primary};
+
   @media (max-width: 500px) {
     position: relative;
     margin: auto;

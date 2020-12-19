@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { ColorSet } from "../../global/ColorSet";
 
 export const DropdownMenus = ({ data, setValue, value }) => {
   const handleChange = (ev) => {
@@ -25,14 +26,14 @@ export const DropdownMenus = ({ data, setValue, value }) => {
 };
 
 const List = styled.select`
-  border: none;
+  border: 3px solid ${ColorSet.primary};
   &:focus {
+    height: 25px;
     outline: none;
   }
   background-color: white;
   border-radius: 10px;
   padding: 5px 5px 5px 10px;
-  height: 25px;
   @media (max-width: 500px) {
   }
 `;

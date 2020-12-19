@@ -1,10 +1,13 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useContext } from "react";
+import { NavLink, useHistory } from "react-router-dom";
 import styled from "styled-components";
 
 import { ColorSet } from "../global/ColorSet";
+import { AuthContext } from "./Context/AuthContext";
 
 export const Sidebar = () => {
+  const history = useHistory();
+  const { currentUser, signOut } = useContext(AuthContext);
   return (
     <Wrapper>
       <Li>
@@ -22,6 +25,25 @@ export const Sidebar = () => {
       <Li>
         <Link to="/home/vegan">Vegan Recipes</Link>
       </Li>
+      {currentUser ? (
+        <Li>
+          <LogOut
+            onClick={() => {
+              signOut();
+              history.push("/login");
+            }}
+          >
+            Log Out
+          </LogOut>
+        </Li>
+      ) : (
+        <Li>
+          <Link to="/login">Login</Link>
+        </Li>
+      )}
+      <Li>
+        <Link to="/signup">Sign Up</Link>
+      </Li>
     </Wrapper>
   );
 };
@@ -36,7 +58,6 @@ const Wrapper = styled.div`
 `;
 
 const Link = styled(NavLink)`
-  /* color: white; */
   color: ${ColorSet.dark};
   text-decoration: none;
   margin-top: 70px;
@@ -48,6 +69,20 @@ const Link = styled(NavLink)`
 
 const Li = styled.li`
   list-style: none;
-  margin-top: 110px;
   font-weight: bold;
+  margin-top: 4.7rem;
+`;
+
+const LogOut = styled.button`
+  color: ${ColorSet.dark};
+  font-size: 1.7rem;
+  list-style: none;
+  font-weight: bold;
+  background-color: transparent;
+  border: none;
+  &:hover {
+    cursor: pointer;
+  }
+  &:focus {
+  }
 `;

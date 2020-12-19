@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
 import { LoadingIcon } from "../LoadingIcon";
 
+import { Swing } from "../../global/GlobalStyle";
 import {
   requestRecipesData,
   receivedRecipesDataError,
@@ -97,7 +98,7 @@ const SearchContainer = styled.div`
   @media (max-width: 500px) {
     width: 100%;
     padding: 7px 0px;
-    height: 280px;
+    height: 290px;
   }
 `;
 
@@ -121,6 +122,11 @@ const Buttons = styled.button`
   font-weight: bold;
   border-radius: 10px;
   background-color: white;
+
+  &:hover {
+    cursor: pointer;
+    animation: ${Swing} 1s ease;
+  }
   @media (max-width: 500px) {
     width: 160px;
     margin: auto;
@@ -191,5 +197,6 @@ const LoadingWrapper = styled.div`
   transform: translate(-50%, -50%);
   @media (max-width: 500px) {
     left: 50%;
+    top: 70%;
   }
 `;
