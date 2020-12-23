@@ -49,7 +49,9 @@ export const Dessert = () => {
             return (
               <RecipesContainer key={recipe.id}>
                 <Recipe onClick={() => handleClick(recipe.id)}>
-                  <Img src={recipe.image} />
+                  <ImgContainer>
+                    <Img src={recipe.image} />
+                  </ImgContainer>
                   <Title>{recipe.title}</Title>
                 </Recipe>
               </RecipesContainer>
@@ -94,12 +96,23 @@ const Recipe = styled.button`
     margin: 20px auto;
   }
 `;
-const Img = styled.img`
-  border-radius: 15%;
+const ImgContainer = styled.div`
   width: 85%;
-  margin-top: 10px;
+  margin: 10px auto;
+  overflow: hidden;
+  border-radius: 15%;
   @media (max-width: 500px) {
     width: 380px;
+  }
+`;
+const Img = styled.img`
+  width: 100%;
+  border-radius: 15%;
+  transition: transform 0.5s ease;
+  &:hover {
+    transform: scale(1.1);
+  }
+  @media (max-width: 500px) {
   }
 `;
 
