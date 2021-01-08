@@ -53,10 +53,9 @@ export const MyRecipes = () => {
   useEffect(() => {
     getCurrentUser();
     getFavoritesRecipesIdFromUser();
-    fetchFavorites();
   }, [currentUserId, favoritesRecipeId]);
 
-  console.log(favoritesRecipe);
+  fetchFavorites();
 
   return (
     <Wrapper>
@@ -66,9 +65,6 @@ export const MyRecipes = () => {
             <Text>Welcome back,</Text>
             <UserName>{currentUser.name}</UserName>
           </NameContainer>
-          <TitleContainer>
-            <FavoriteTitle>My Favorites</FavoriteTitle>
-          </TitleContainer>
           {favoritesRecipe.length > 0 ? (
             favoritesRecipe.map((favoriteRecipe) => {
               return (
@@ -115,7 +111,7 @@ export const MyRecipes = () => {
 const Wrapper = styled.div`
   height: 100%;
   min-height: 90vh;
-  background-color: ${ColorSet.primaryLight};
+  background-color: ${ColorSet.primaryExtraLight};
   @media (max-width: 500px) {
   }
 `;
@@ -235,25 +231,6 @@ const RecipesColumns = styled.div`
   margin-bottom: 30px;
   @media (max-width: 500px) {
     column-count: 1;
-  }
-`;
-
-const FavoriteTitle = styled.p`
-  font-size: 1.9rem;
-  color: ${ColorSet.dark};
-  text-decoration: underline;
-  font-weight: bold;
-  @media (max-width: 500px) {
-  }
-`;
-
-const TitleContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 10px auto;
-  height: 50px;
-  @media (max-width: 500px) {
   }
 `;
 

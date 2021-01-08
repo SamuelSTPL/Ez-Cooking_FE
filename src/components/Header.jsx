@@ -44,6 +44,9 @@ export const Header = () => {
 };
 
 const Wrapper = styled.div`
+  z-index: 2;
+  position: fixed;
+  width: 100%;
   display: flex;
   align-items: center;
   height: 80px;
@@ -53,6 +56,7 @@ const Wrapper = styled.div`
   @media (max-width: 500px) {
     flex-direction: column;
     height: 140px;
+    position: relative;
   }
 `;
 const TitleContainer = styled.div`
@@ -96,7 +100,7 @@ const NavBar = styled.nav`
     right: 0px;
     width: 80%;
     margin-top: 15px;
-    margin-left: -60px;
+    margin-left: -100px;
   }
 `;
 
@@ -129,7 +133,7 @@ const StyledNavLink = styled(NavLink)`
   padding: 5px;
 
   @media (max-width: 500px) {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     margin-left: 3rem;
   }
 

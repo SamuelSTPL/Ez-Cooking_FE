@@ -96,6 +96,9 @@ const Submit = styled.button`
   background-color: white;
   margin-left: 15px;
   height: 35px;
+  &:focus {
+    outline: none;
+  }
   &:hover {
     cursor: pointer;
     animation: ${Swing} 1s ease;

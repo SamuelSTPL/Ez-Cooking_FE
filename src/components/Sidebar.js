@@ -25,6 +25,9 @@ export const Sidebar = () => {
       <Li>
         <Link to="/home/vegan">Vegan Recipes</Link>
       </Li>
+      <Li>
+        <Link to="/signup">Sign Up</Link>
+      </Li>
       {currentUser ? (
         <Li>
           <LogOut
@@ -33,7 +36,7 @@ export const Sidebar = () => {
               history.push("/login");
             }}
           >
-            Log Out
+            <LogOutText>Log Out</LogOutText>
           </LogOut>
         </Li>
       ) : (
@@ -41,14 +44,14 @@ export const Sidebar = () => {
           <Link to="/login">Login</Link>
         </Li>
       )}
-      <Li>
-        <Link to="/signup">Sign Up</Link>
-      </Li>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
+  margin-top: 80px;
+  position: fixed;
+  width: 16.5%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -62,6 +65,24 @@ const Link = styled(NavLink)`
   text-decoration: none;
   margin-top: 70px;
   font-size: 1.7rem;
+  position: relative;
+
+  &:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: -4px;
+    content: "";
+    display: block;
+    height: 4px;
+    left: 50%;
+    position: absolute;
+    background: ${ColorSet.dark};
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+  &:hover:after {
+    width: 100%;
+    left: 0;
+  }
   &.active {
     border-bottom: 4px solid ${ColorSet.dark};
   }
@@ -85,4 +106,8 @@ const LogOut = styled.button`
   }
   &:focus {
   }
+`;
+
+const LogOutText = styled.span`
+  color: ${ColorSet.red};
 `;

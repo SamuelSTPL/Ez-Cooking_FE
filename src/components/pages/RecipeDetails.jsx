@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { AuthContext } from "../Context/AuthContext";
 import { LoadingIcon } from "../LoadingIcon";
 import { ColorSet } from "../../global/ColorSet";
+import { Swing } from "../../global/GlobalStyle";
 
 export const RecipeDetails = () => {
   const [recipeData, setRecipeData] = useState();
@@ -45,7 +46,7 @@ export const RecipeDetails = () => {
           </TitleAndScoreContainer>
 
           <DietsContainer>
-            {recipeData.diets.length > 0 ? (
+            {recipeData.diets && recipeData.diets.length > 0 ? (
               recipeData.diets.map((diet) => {
                 return <Diet key={diet}>{diet}</Diet>;
               })
@@ -152,7 +153,7 @@ const DietsContainer = styled.div`
   margin-top: 20px;
   height: 40px;
   display: flex;
-  width: 60%;
+  width: 70%;
   justify-content: space-around;
   align-items: center;
   background-color: white;
@@ -163,8 +164,12 @@ const DietsContainer = styled.div`
 `;
 
 const Diet = styled.span`
-  color: ${ColorSet.dark};
+  font-size: 1.2rem;
+  text-decoration: underline;
+  font-weight: bold;
+  color: ${ColorSet.primary};
   @media (max-width: 500px) {
+    font-size: 1rem;
   }
 `;
 
@@ -263,6 +268,7 @@ const FavButton = styled.button`
   }
   &:hover {
     cursor: pointer;
+    animation: ${Swing} 1s ease;
   }
   box-shadow: 0px 10px 13px -7px gray, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 

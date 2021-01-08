@@ -70,6 +70,8 @@ export const Vegetarian = () => {
 const Wrapper = styled.div`
   background-color: ${ColorSet.primaryExtraLight};
   width: 100%;
+  padding-top: 80px;
+  min-height: 90vh;
   @media (max-width: 500px) {
     background-color: ${ColorSet.primaryLight};
   }
@@ -80,10 +82,11 @@ const RecipesContainer = styled.div``;
 const Recipe = styled.button`
   margin: 20px;
   margin-left: 50px;
-  width: 700px;
+  width: 90%;
+  height: 430px;
   background-color: white;
   color: ${ColorSet.dark};
-  border: none;
+  border: 3px solid ${ColorSet.primary};
   border-radius: 10px;
   box-shadow: 0px 10px 13px -7px gray, 5px 5px 15px 5px rgba(0, 0, 0, 0);
   &:hover {
@@ -91,6 +94,7 @@ const Recipe = styled.button`
   }
   @media (max-width: 500px) {
     width: 95%;
+    height: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -128,7 +132,7 @@ const Title = styled.p`
 `;
 
 const RecipesColumns = styled.div`
-  column-count: 2;
+  column-count: 3;
   width: 100%;
   margin-bottom: 30px;
   @media (max-width: 500px) {

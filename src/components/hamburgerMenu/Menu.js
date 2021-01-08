@@ -60,9 +60,9 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   background-color: ${ColorSet.dark};
-  top: 142px;
+  top: 140px;
   right: 0px;
-  height: 80%;
+  height: 75%;
   width: 65%;
   @media (max-width: 500px) {
     visibility: ${(props) => (props.open ? "visible" : "hidden")};
@@ -72,7 +72,7 @@ const Wrapper = styled.div`
 const Link = styled(NavLink)`
   color: white;
   text-decoration: none;
-  margin-top: 70px;
+  margin-top: 50px;
   font-size: 1.5rem;
 `;
 

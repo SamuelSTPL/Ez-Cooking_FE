@@ -35,7 +35,7 @@ const HamburgerButton = styled.button`
 
   @media (max-width: 500px) {
     visibility: visible;
-    right: 3rem;
-    top: 85px;
+    right: 2rem;
+    top: 80px;
   }
 `;
