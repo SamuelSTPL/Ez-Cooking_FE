@@ -101,7 +101,7 @@ export const RecipeDetails = () => {
 };
 
 const Wrapper = styled.div`
-  padding: 20px 0 100px 0;
+  padding: 100px 0 100px 0;
   width: 100%;
   height: 100%;
   background-color: ${ColorSet.primaryLight};
@@ -144,7 +144,7 @@ const Img = styled.img`
   width: 650px;
   margin-top: 30px;
   @media (max-width: 500px) {
-    width: 450px;
+    width: 390px;
     margin-top: 0px;
   }
 `;

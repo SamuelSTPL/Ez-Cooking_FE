@@ -73,6 +73,7 @@ const Wrapper = styled.div`
   min-height: 90vh;
   @media (max-width: 500px) {
     background-color: ${ColorSet.primaryLight};
+    padding: 0;
   }
 `;
 

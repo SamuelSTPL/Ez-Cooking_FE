@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { ColorSet } from "../../global/ColorSet";
 import { AuthContext } from "../Context/AuthContext";
 import { Link, useHistory } from "react-router-dom";
+import { Swing } from "../../global/GlobalStyle";
 
 export const MyRecipes = () => {
   const { currentUserId, signOut, getCurrentUser, currentUser } = useContext(
@@ -55,7 +56,9 @@ export const MyRecipes = () => {
     getFavoritesRecipesIdFromUser();
   }, [currentUserId, favoritesRecipeId]);
 
-  fetchFavorites();
+  useEffect(() => {
+    fetchFavorites();
+  }, []);
 
   return (
     <Wrapper>
@@ -109,10 +112,12 @@ export const MyRecipes = () => {
 };
 
 const Wrapper = styled.div`
+  padding-top: 80px;
   height: 100%;
   min-height: 90vh;
   background-color: ${ColorSet.primaryExtraLight};
   @media (max-width: 500px) {
+    padding-top: 0px;
   }
 `;
 
@@ -140,6 +145,7 @@ const NoUserContainer = styled(SignedInContainer)`
   justify-content: center;
   align-items: center;
   @media (max-width: 500px) {
+    height: 100%;
   }
 `;
 
@@ -151,6 +157,9 @@ const LinkContainer = styled.div`
   align-items: center;
   margin-top: 60px;
   @media (max-width: 500px) {
+    display: inline-block;
+    text-align: center;
+    margin-top: 60px;
   }
 `;
 
@@ -250,8 +259,9 @@ const LogOut = styled.button`
   }
   &:hover {
     cursor: pointer;
+    animation: ${Swing} 1s ease;
   }
-
+  box-shadow: 0px 10px 13px -7px gray;
   font-size: 1.3rem;
   height: 40px;
   width: 200px;
@@ -268,6 +278,8 @@ const LogOut = styled.button`
 const TextForLinks = styled.p`
   font-size: 1.3rem;
   @media (max-width: 500px) {
+    font-size: 1rem;
+    margin-bottom: 10px;
   }
 `;
 
@@ -275,5 +287,6 @@ const StyledLinks = styled(Link)`
   font-size: 1.3rem;
   color: ${ColorSet.dark};
   @media (max-width: 500px) {
+    font-size: 1rem;
   }
 `;

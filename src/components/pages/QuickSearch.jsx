@@ -94,6 +94,7 @@ const Wrapper = styled.div`
   width: 100%;
 `;
 const SearchContainer = styled.div`
+  padding-top: 80px;
   height: 250px;
   background-color: ${ColorSet.primaryLight};
   border-bottom: 5px solid ${ColorSet.dark};
