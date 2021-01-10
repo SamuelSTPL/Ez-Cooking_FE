@@ -1,4 +1,4 @@
-Hello Everyone and welcome to my final project' Repo! I built this web app from scratch as a final project from Concordia Bootcamp (in Montreal). It was my first real Full-Stack project!
+Hello Everyone and welcome to my final project' Repo! I built this web app from scratch as a final project for Concordia Bootcamp (in Montreal). It was my first real Full-Stack project!
 
 INTRO
 
