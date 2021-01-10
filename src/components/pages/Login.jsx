@@ -52,6 +52,7 @@ export const Login = () => {
 };
 
 const Wrapper = styled.div`
+  padding-top: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -59,6 +60,7 @@ const Wrapper = styled.div`
   height: 90vh;
   @media (max-width: 500px) {
     height: 85vh;
+    padding-top: 0px;
   }
 `;
 

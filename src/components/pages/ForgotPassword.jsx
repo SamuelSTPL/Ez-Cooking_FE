@@ -51,11 +51,13 @@ export const ForgotPassword = () => {
 
 const Wrapper = styled.div`
   display: flex;
+  padding-top: 70px;
   align-items: center;
   justify-content: center;
   background-color: ${ColorSet.primaryLight};
   height: 90vh;
   @media (max-width: 500px) {
+    padding-top: 0px;
     height: 80vh;
   }
 `;
