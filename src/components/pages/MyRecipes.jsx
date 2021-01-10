@@ -44,6 +44,7 @@ export const MyRecipes = () => {
           }
         );
         const json = await res.json();
+        console.log(json);
         setFavoritesRecipe(json.data);
       }
     } catch (error) {
@@ -54,11 +55,10 @@ export const MyRecipes = () => {
   useEffect(() => {
     getCurrentUser();
     getFavoritesRecipesIdFromUser();
+    fetchFavorites();
   }, [currentUserId, favoritesRecipeId]);
 
-  useEffect(() => {
-    fetchFavorites();
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <Wrapper>
@@ -71,7 +71,10 @@ export const MyRecipes = () => {
           {favoritesRecipe.length > 0 ? (
             favoritesRecipe.map((favoriteRecipe) => {
               return (
-                <Recipe onClick={() => handleClick(favoriteRecipe.id)}>
+                <Recipe
+                  key={favoriteRecipe.title}
+                  onClick={() => handleClick(favoriteRecipe.id)}
+                >
                   <Img src={favoriteRecipe.image} />
                   <Title>{favoriteRecipe.title}</Title>
                 </Recipe>

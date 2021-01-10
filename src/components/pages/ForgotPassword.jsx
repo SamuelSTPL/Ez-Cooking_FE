@@ -56,7 +56,7 @@ const Wrapper = styled.div`
   background-color: ${ColorSet.primaryLight};
   height: 90vh;
   @media (max-width: 500px) {
-    height: 85vh;
+    height: 80vh;
   }
 `;
 
@@ -72,7 +72,8 @@ const FormContainer = styled.div`
   flex-direction: column;
   @media (max-width: 500px) {
     width: 75%;
-    height: 590px;
+    height: 510px;
+    margin-top: 20px;
   }
 `;
 

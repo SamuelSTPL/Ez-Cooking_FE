@@ -30,6 +30,9 @@ export const Menu = () => {
       <Link to="/home/vegan" onClick={() => setOpenMenu(!openMenu)}>
         Vegan Recipes
       </Link>
+      <Link to="/signup" onClick={() => setOpenMenu(!openMenu)}>
+        Sign Up
+      </Link>
       {currentUser ? (
         <LogOut
           onClick={() => {
@@ -45,9 +48,6 @@ export const Menu = () => {
           Login
         </Link>
       )}
-      <Link to="/signup" onClick={() => setOpenMenu(!openMenu)}>
-        Sign Up
-      </Link>
       <Redirect exact from="/" to="/home/quicksearch" />
     </Wrapper>
   );
@@ -77,9 +77,9 @@ const Link = styled(NavLink)`
 `;
 
 const LogOut = styled.button`
-  color: white;
+  color: ${ColorSet.red};
   text-decoration: none;
-  margin-top: 70px;
+  margin-top: 50px;
   font-size: 1.5rem;
   background-color: transparent;
   border: none;

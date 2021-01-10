@@ -71,7 +71,7 @@ export const MainCourse = () => {
 };
 
 const Wrapper = styled.div`
-  background-color: ${ColorSet.primaryExtraLight};
+  background-color: white;
   width: 100%;
   padding-right: 35px;
   padding-top: 80px;

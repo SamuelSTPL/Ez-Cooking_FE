@@ -5,6 +5,7 @@ import { Diets, mealType } from "./filtersData";
 import { IngredientsFilter } from "./IngredientsFilter";
 import { DropdownMenus } from "./DropdownMenus";
 import { FiltersContext } from "../Context/FiltersContext";
+import { ColorSet } from "../../global/ColorSet";
 
 export const Filters = () => {
   const {
@@ -84,8 +85,10 @@ const Title = styled.p`
   margin-right: 15px;
   margin-left: 30px;
   font-size: 1.3rem;
+  color: ${ColorSet.dark};
   @media (max-width: 500px) {
     font-size: 1rem;
+    margin-left: 0px;
     margin-right: 9px;
   }
 `;

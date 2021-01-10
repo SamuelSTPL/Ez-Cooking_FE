@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { ColorSet } from "../../global/ColorSet";
 
-export const DropdownMenus = ({ data, setValue, value }) => {
+export const DropdownMenus = ({ data, setValue }) => {
   const handleChange = (ev) => {
     setValue(ev.target.value);
   };

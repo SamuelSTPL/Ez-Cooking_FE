@@ -67,9 +67,10 @@ export const Vegan = () => {
 };
 
 const Wrapper = styled.div`
-  background-color: ${ColorSet.primaryExtraLight};
+  background-color: white;
   width: 100%;
   padding-top: 80px;
+  padding-right: 35px;
   min-height: 90vh;
   @media (max-width: 500px) {
     background-color: ${ColorSet.primaryLight};

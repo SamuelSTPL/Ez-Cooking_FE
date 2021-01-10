@@ -95,9 +95,9 @@ const Wrapper = styled.div`
 `;
 const SearchContainer = styled.div`
   padding-top: 80px;
-  height: 250px;
-  background-color: ${ColorSet.primaryLight};
-  border-bottom: 5px solid ${ColorSet.dark};
+  height: 220px;
+  background-color: ${ColorSet.primaryExtraLight};
+  border-bottom: 2px solid ${ColorSet.primary};
   @media (max-width: 500px) {
     width: 100%;
     padding: 7px 0px;
@@ -199,7 +199,7 @@ const Title = styled.p`
 `;
 
 const RecipesColumns = styled.div`
-  background-color: ${ColorSet.primaryExtraLight};
+  background-color: white;
   column-count: 3;
   width: 100%;
   margin-bottom: 30px;

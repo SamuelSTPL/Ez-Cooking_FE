@@ -50,6 +50,7 @@ export const Sidebar = () => {
 
 const Wrapper = styled.div`
   margin-top: 80px;
+  padding-top: 30px;
   position: fixed;
   width: 16.5%;
   display: flex;
@@ -57,14 +58,14 @@ const Wrapper = styled.div`
   align-items: center;
   background-color: ${ColorSet.primaryLight};
   height: 100%;
-  border-right: 10px solid ${ColorSet.dark};
+  border-right: 5px solid ${ColorSet.dark};
 `;
 
 const Link = styled(NavLink)`
   color: ${ColorSet.dark};
   text-decoration: none;
   margin-top: 70px;
-  font-size: 1.7rem;
+  font-size: 1.4rem;
   position: relative;
 
   &:after {

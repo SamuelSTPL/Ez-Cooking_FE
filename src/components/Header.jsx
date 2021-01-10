@@ -129,7 +129,7 @@ const Li = styled.li`
 const StyledNavLink = styled(NavLink)`
   color: white;
   text-decoration: none;
-  font-size: 2rem;
+  font-size: 1.4rem;
   padding: 5px;
 
   @media (max-width: 500px) {

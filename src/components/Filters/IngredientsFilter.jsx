@@ -55,6 +55,7 @@ const IngredientsContainer = styled.form`
   }
 `;
 const Label = styled.label`
+  color: ${ColorSet.dark};
   @media (max-width: 500px) {
     font-size: 1.5rem;
   }
