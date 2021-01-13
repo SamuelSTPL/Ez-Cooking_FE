@@ -55,7 +55,7 @@ export const QuickSearch = () => {
     history.push(`/recipe-details/${id}`);
   };
 
-  console.log(filteredRecipes);
+  // console.log(filteredRecipes);
   return (
     <Wrapper>
       <SearchContainer>

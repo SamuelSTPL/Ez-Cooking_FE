@@ -7,28 +7,14 @@ import { Link, useHistory } from "react-router-dom";
 import { Swing } from "../../global/GlobalStyle";
 
 export const MyRecipes = () => {
-  const { currentUserId, signOut, getCurrentUser, currentUser } = useContext(
-    AuthContext
-  );
+  const { signOut, currentUser, favoritesRecipeId } = useContext(AuthContext);
   const history = useHistory();
-  const [favoritesRecipeId, setFavoritesRecipeId] = useState([]);
   const [favoritesRecipe, setFavoritesRecipe] = useState([]);
+
+  // console.log("Favorites Recipes", favoritesRecipe);
 
   const handleClick = (id) => {
     history.push(`/recipe-details/${id}`);
-  };
-
-  const getFavoritesRecipesIdFromUser = () => {
-    if (currentUser) {
-      let stringId;
-      if (currentUser.favorites.length === 1) {
-        stringId = currentUser.favorites[0].toString();
-        setFavoritesRecipeId(stringId);
-      } else {
-        stringId = currentUser.favorites.join();
-        setFavoritesRecipeId(stringId);
-      }
-    }
   };
 
   const fetchFavorites = async () => {
@@ -53,12 +39,8 @@ export const MyRecipes = () => {
   };
 
   useEffect(() => {
-    getCurrentUser();
-    getFavoritesRecipesIdFromUser();
     fetchFavorites();
-  }, [currentUserId, favoritesRecipeId]);
-
-  useEffect(() => {}, []);
+  }, [favoritesRecipeId]);
 
   return (
     <Wrapper>

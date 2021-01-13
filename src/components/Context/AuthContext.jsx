@@ -7,9 +7,13 @@ export const AuthProvider = ({ children }) => {
   const [currentUserId, setCurrentUserId] = useState();
   const [currentUser, setCurrentUser] = useState();
   const [loading, setLoading] = useState(true);
+  const [favoritesRecipeId, setFavoritesRecipeId] = useState([]);
 
-  // console.log(currentUserId);
+  // console.log("Current User Id In Context:", currentUserId);
+  // console.log("Current User In Context:", currentUser);
+  // console.log("Favorites Recipes Id:", favoritesRecipeId);
 
+  //Firebase Sign Up
   const signUp = async (email, password, name) => {
     const userCredentials = await auth.createUserWithEmailAndPassword(
       email,
@@ -22,18 +26,29 @@ export const AuthProvider = ({ children }) => {
     });
   };
 
+  //Firebase LogIn
   const login = (email, password) => {
     return auth.signInWithEmailAndPassword(email, password);
   };
 
+  //Firebase Reset Password
   const resetPassword = (email) => {
     return auth.sendPasswordResetEmail(email);
   };
 
+  //Firebase Sign Out
   const signOut = () => {
     return auth.signOut();
   };
 
+  //GET USER
+  //When there is a Current User Id, Fire the Function Bellow (getCurrentUser)
+  useEffect(() => {
+    if (currentUserId) {
+      getCurrentUser();
+    }
+  }, [currentUserId]);
+  //Get The Current User
   const getCurrentUser = () => {
     if (currentUserId) {
       db.collection("users")
@@ -42,11 +57,35 @@ export const AuthProvider = ({ children }) => {
         .then((doc) => {
           let data = doc.data();
           setCurrentUser(data);
-          // console.log(currentUser);
         });
     }
   };
 
+  //FAVORITE RECIPES IDS
+  //When there is a Current User, Fire the Function Bellow (getFavoritesRecipesIdFromUser)
+  useEffect(() => {
+    if (currentUser) {
+      getFavoritesRecipesIdFromUser();
+    }
+  }, [currentUser]);
+
+  //Access Current User's Favorites Recipes And Set It
+  const getFavoritesRecipesIdFromUser = () => {
+    if (currentUser) {
+      let stringId;
+      if (currentUser.favorites.length === 1) {
+        stringId = currentUser.favorites[0].toString();
+        setFavoritesRecipeId(stringId);
+        console.log("Favorites Recipes", favoritesRecipeId);
+      } else {
+        stringId = currentUser.favorites.join();
+        setFavoritesRecipeId(stringId);
+        console.log("Favorites Recipes", favoritesRecipeId);
+      }
+    }
+  };
+
+  //Add Recipe Id to Favorites when the OnClick is Fire
   const addToFavorites = async (id) => {
     if (currentUserId) {
       let favoriteRef = db.collection("users").doc(currentUserId);
@@ -58,7 +97,6 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
-      // console.log(user);
       if (user) {
         setCurrentUserId(user.uid);
       } else {
@@ -83,6 +121,7 @@ export const AuthProvider = ({ children }) => {
         setCurrentUser,
         getCurrentUser,
         addToFavorites,
+        favoritesRecipeId,
       }}
     >
       {!loading && children}

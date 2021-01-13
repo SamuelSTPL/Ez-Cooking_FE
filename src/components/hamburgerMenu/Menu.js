@@ -11,7 +11,7 @@ export const Menu = () => {
   const { currentUser, signOut } = useContext(AuthContext);
   const history = useHistory();
 
-  console.log(currentUser);
+  // console.log(currentUser);
 
   return (
     <Wrapper open={openMenu}>
