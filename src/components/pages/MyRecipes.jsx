@@ -98,11 +98,13 @@ export const MyRecipes = () => {
 
 const Wrapper = styled.div`
   padding-top: 80px;
+  padding-bottom: 40px;
   height: 100%;
   min-height: 90vh;
   background-color: ${ColorSet.primaryExtraLight};
   @media (max-width: 500px) {
     padding-top: 0px;
+    padding-bottom: 0px;
   }
 `;
 
